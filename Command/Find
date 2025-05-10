@@ -1,84 +1,73 @@
 The find command in Linux is one of the most powerful tools for searching files and directories 
 
 1 BASIC USAGE
- a. Find files by name:
+     a. Find files by name:
         find /path -name filename.txt
- b. Case-insensitive:
+     b. Case-insensitive:
         find /path -iname filename.txt
 
 2 BY TYPE
-a. Find all files:
-      find /path -type f
-
-b. Find all directories:
-  find /path -type d
-
+     a. Find all files:
+        find /path -type f
+     b. Find all directories:
+        find /path -type d
 
 3 BY PATTERN / WILDCARD
-a. Find all .log files:
-    find /path -name "*.log"
-
-b. Find all files starting with “abc”:
-    find /path -name "abc*"
-
+     a. Find all .log files:
+        find /path -name "*.log"
+     b. Find all files starting with “abc”:
+        find /path -name "abc*"
 
 4 BY TIME
-a. Find files modified in the last 7 days:
-    find /path -mtime -7
-
-b. Find files modified exactly 7 days ago:
-    find /path -mtime 7
-
-c. Find files accessed in the last 24 hours:
-    find /path -atime -1
-
-d. Find Files Modified in Last 5 Hours
-    find /path/to/search -type f -mmin -300
-
-e. Find Directories Created/Modified in Last 5 Hours
-    find /path/to/search -type d -mmin -300
+     a. Find files modified in the last 7 days:
+        find /path -mtime -7
+     b. Find files modified exactly 7 days ago:
+        find /path -mtime 7
+     c. Find files accessed in the last 24 hours:
+        find /path -atime -1
+     d. Find Files Modified in Last 5 Hours
+        find /path/to/search -type f -mmin -300
+     e. Find Directories Created/Modified in Last 5 Hours
+        find /path/to/search -type d -mmin -300
 
 5 BY SIZE
-a. Files greater than 100MB:
-    find /path -size +100M
-
-b. Files less than 10KB:
-    find /path -size -10k
+     a. Files greater than 100MB:
+        find /path -size +100M
+     b. Files less than 10KB:
+        find /path -size -10k
 
 6 BY PERMISSION
-a. Find all files with 777 permissions:
-    find /path -type f -perm 0777
+     a. Find all files with 777 permissions:
+        find /path -type f -perm 0777
 
 7 BY OWNER OR GROUP
-a. Find files owned by user "abhishek":
-    find /path -user abhishek
-
-b. Find files owned by group "devs":
-    find /path -group devs
+     a. Find files owned by user "abhishek":
+        find /path -user abhishek
+     b. Find files owned by group "devs":
+        find /path -group devs
 
 8 DELETE FILES SAFELY
-a. Delete .tmp files:
-    find /path -name "*.tmp" -type f -delete
+     a. Delete .tmp files:
+        find /path -name "*.tmp" -type f -delete
 
 9 COMBINED CONDITIONS
-a. Find .log files modified in last 3 days:
-    find /path -name "*.log" -mtime -3
+     a. Find .log files modified in last 3 days:
+        find /path -name "*.log" -mtime -3
 
 10 EXECUTE COMMAND ON RESULTS
-a. Find and remove .bak files:
-    find /path -name "*.bak" -exec rm -f {} \;
-
-b. Find and list file details:
-    find /path -type f -exec ls -lh {} \;
+     a. Find and remove .bak files:
+        find /path -name "*.bak" -exec rm -f {} \;
+     b. Find and list file details:
+        find /path -type f -exec ls -lh {} \;
 
 11 SYMLINKS AND SPECIAL FILES
-a. Find symbolic links:
-    find /path -type l
+     a. Find symbolic links:
+        find /path -type l
 
 12 LIST ONLY N LEVELS DEEP
-a. Find files only 1 level deep:
-    find /path -maxdepth 1 -type f
+     a. Find files only 1 level deep:
+        find /path -maxdepth 1 -type f
 
 13  NEGATION / EXCLUDE
-a. Find all but exclude .git folder:
-    find /path -type d ! -name ".git"
+    a. Find all but exclude .git folder:
+       find /path -type d ! -name ".git"
